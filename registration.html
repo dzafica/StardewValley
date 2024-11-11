@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <link id="themeStylesheet" rel="stylesheet" href="css/registration_light.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a8721eab17.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/icon.png" type="image/jpg">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="light-theme">
+    <div>
+        <div class="aplikacije">
+            <a href="https://www.pinterest.com/" class="pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://x.com/i/flow/login" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="wrap">
+        <form>
+            <button type="button" class="back" onclick="window.location.href='index.html';">＜</button>
+            <div class="file-upload">
+                <img src="img/default_pfp.png" class="pfp default-pfp" id="profilePicture" />
+                <input type="file" id="file" class="profilna">
+                <label for="file" class="sprememba">= Click here to add profile picture =</label>
+            </div>
+
+            <label for="username">Username: <span id="username-required" pattern="[A-Za-z0-9._]+"></span></label>
+            <input type="text" id="username" name="username" required maxlength="20">
+
+            <label for="password">Password: <span id="password-required"></span></label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+
+            <label for="email"></span>Email:<span id="email-required"></label>
+            <input type="email" id="email" name="email" required maxlength="40">
+
+            <label for="name">Name: <span id="name-required"></span></label>
+            <input type="text" id="name" name="name" required maxlength="20">
+
+            <label for="lastname"></span>Last Name:</label>
+            <input type="text" id="lastname" name="lastname" maxlength="20">
+
+            <!-- Gender Selection -->
+            <label for="gender">Gender:</label>
+            <div class="gender-selection">
+                <!-- Male option -->
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">
+                    <img src="img/male.svg" alt="Male" class="gender-image">
+                </label>
+
+                <!-- Female option -->
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">
+                    <img src="img/female.svg" alt="Female" class="gender-image">
+                </label>
+            </div>
+            <!-- Submit Button -->
+            <button id="alertButton" type="button">Confirm</button>
+        </form>
+    </div>
+    <div>
+        <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()">Dark Mode</button>
+    </div>
+
+    <script src="js/pfp.js"></script>
+    <script src="js/button_registration.js"></script>
+    <script src="js/themeToggle_registration.js"></script>
+
+    <script>
+        document.getElementById("username").addEventListener("input", function(event) {
+            const value = event.target.value;
+            event.target.value = value.replace(/[^A-Za-z0-9._]/g, '');  // Allow only letters, numbers, and dots
+        });
+        // Restricting Name to Letters Only
+        document.getElementById("name").addEventListener("input", function(event) {
+            const value = event.target.value;
+            event.target.value = value.replace(/[^A-Za-z]/g, '');  // Only allow letters
+        });
+
+        // Restricting Last Name to Letters Only
+        document.getElementById("lastname").addEventListener("input", function(event) {
+            const value = event.target.value;
+            event.target.value = value.replace(/[^A-Za-z]/g, '');  // Only allow letters
+        });
+
+        // Restricting Email to Letters, Numbers, @, and Dots
+        document.getElementById("email").addEventListener("input", function(event) {
+            const value = event.target.value;
+            event.target.value = value.replace(/[^A-Za-z0-9@.]/g, '');  // Only allow letters, numbers, @, and dots
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex; /* Add Flexbox to body */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+body{
+    background-image: url('../img/background_light.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.aplikacije{
+    position: absolute;
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;
+}
+a{
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    outline: 2px solid white;
+    margin: 0 5px;
+    transition-property:
+        outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+    text-decoration: none;
+}
+a:hover{
+    outline-offset: 4px;
+}
+a:hover i{
+    animation: shake .25s;
+}
+.pinterest:hover{
+    background-color: #E60023;
+    outline-color: #aa061f;
+}
+.twitter:hover{
+    background-color: #1da1f2;
+    outline-color: #1da1f2;
+}
+.instagram:hover{
+    background-image:
+    radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+    #fd5949 45%, #d62497 60%, #285AEB 90%);
+    outline-color: #a02d76;
+}
+.youtube:hover{
+    background-color: #FF0000;
+    outline-color: #ee0202;
+}
+.sredina{
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+}
+img{
+    width: 794.4px;
+    height: 397.2px;
+    opacity: 0;
+    transform: scale(0);
+    animation: iskoci .70s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes iskoci{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    60%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.gumbi{
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 274.5px;
+    height: 56.1px;
+    background-color: #fdd88a;
+    border: 5px solid #e2793f;
+    border-radius:12px;
+    font-size: 16px;
+    color: #391b13;
+    outline: 2px solid #3e0e0a;
+    font-family: 'Bungee', cursive;
+    text-align: center;
+}
+button:hover{
+    color: #914732;
+    width: 276px;
+    height: 58px;
+    background-color: #f9e1ae;
+    outline: 2px solid #7c1d16;
+    border: 5px solid #ce7d6b;
+}
+.button1{
+    margin-right: 87px;
+}

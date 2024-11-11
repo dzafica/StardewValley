@@ -1,0 +1,313 @@
+html,body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex; /* Add Flexbox to body */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background_light.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(5px) brightness(0.7);
+    /* Apply blur to only the background */
+    z-index: -1;
+    /* Ensure the background stays behind the content */
+}
+
+.aplikacije {
+    position: absolute;
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;
+}
+
+a {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    outline: 2px solid white;
+    margin: 0 5px;
+    transition-property:
+        outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+    text-decoration: none;
+}
+
+a:hover {
+    outline-offset: 4px;
+}
+
+a:hover i {
+    animation: shake .25s;
+}
+
+.pinterest:hover {
+    background-color: #E60023;
+    outline-color: #aa061f;
+}
+
+.twitter:hover {
+    background-color: #1da1f2;
+    outline-color: #1da1f2;
+}
+
+.instagram:hover {
+    background-image:
+        radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+            #fd5949 45%, #d62497 60%, #285AEB 90%);
+    outline-color: #a02d76;
+}
+
+.youtube:hover {
+    background-color: #FF0000;
+    outline-color: #ee0202;
+}
+
+.wrap {
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+    flex-direction: column;
+
+}
+
+form {
+    height: 526px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #fdd88a;
+    border: 10px solid #e2793f;
+    display: flex;
+    flex-direction: column; /* Ensure form content is in a column */
+    justify-content: space-around; /* Spread items evenly with space */
+    align-items: center; /* Center items horizontally */
+}
+
+.back{
+    align-self: flex-start; /* Align the button to the left side of the form */
+    height: 36px;
+    background-color: #823f2c;
+    color: white;
+    border: none;
+    font-size: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.back:hover{
+    background-color: #391b13;
+}
+
+.pfp {
+    width: 100px;              /* Set a fixed width */
+    height: 100px;             /* Set a fixed height to ensure it's a circle */
+    border-radius: 50%;        /* Make it a circle */
+    object-fit: cover;         /* Ensure the image fills the circle without distortion */
+    background: #dfdfdf;       /* Default background */
+    overflow: hidden;
+}
+input[type="file"] {
+    display: none;             /* Hide the file input button */
+}
+
+.file-upload {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.profilna {
+    display: none;
+}
+
+.file-upload label {
+    color: #391b13;
+    font-size: 16px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+label.sprememba {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    color: #391b13;
+}
+label.sprememba:hover {
+    color: aliceblue;
+}
+
+span {
+    color: #ff0000;
+}
+
+input {
+    border: none;
+    background-color: #b2583f;
+    block-size: 27px;
+    width: 323px;
+    color: #391b13;
+    border-radius: 12px;
+}
+
+label {
+    color: #391b13;
+    font-size: 16px;
+    padding: 8px 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #3e1919;
+    /* Change this to your desired color */
+    opacity: 1;
+    /* Ensures the opacity stays at 100% */
+}
+
+input:focus {
+    outline: none;
+    background-color: #b8614956;
+    box-shadow: gray;
+    box-shadow: 4px 4px 9px #000000;
+}
+
+.gender-selection {
+    display: inline-flex;
+    width: 80px;
+    justify-content: center;
+}
+
+.gender-selection input[type="radio"] {
+    display: none;
+    /* Hide the radio button itself */
+}
+
+.gender-selection img {
+    width: 50px;
+    /* Control the size of the images */
+    height: auto;
+    /* Maintain aspect ratio */
+    border: 3px solid transparent;
+    /* Default border */
+    border-radius: 5px;
+    /* Optional: make the images round */
+    transition: border-color 0.3s ease;
+}
+
+.gender-selection img:hover {
+    border-color: #8b4532;
+    /* Highlight border on hover */
+}
+
+.gender-selection input[type="radio"]:checked+label .gender-image {
+    border-color: #391b13;
+    /* Change border color when selected */
+}
+
+#alertButton {
+    background-color: #823f2c;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    width: 75%;
+    height: 25px;
+}
+
+#alertButton:hover {
+    background-color: #391b13;
+    /* Darker shade on hover */
+}
+
+/* Styling the button */
+.theme-toggle {
+    position: fixed;
+    width: 123px;
+    height: 56px;
+    bottom: 3%;
+    right: 1.5%;
+    background-color: #fdd88a;
+    color: #2b1611;
+    border: 5px solid #e2793f;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+/* Optional: Add a hover effect */
+.theme-toggle:hover {
+    background-color: #e2793f; /* Darker shade on hover */
+    color: #7a3d2c;
+}
+
+
+/*Sweet Alert:*/
+
+/*for short password*/
+.swal2-popup {
+    background-color: #fdd88a; /* Light red background */
+    border-radius: 12px; /* Rounded corners */
+    border: 10px solid #b1543a; /* Red border */
+    padding: 20px;
+}
+
+.swal2-popup .swal2-title {
+    color: #391b13;  /* Set title color to black */
+}
+
+div#swal2-html-container {
+    color: #391b13;
+}
+
+/* Custom Text for Error */
+.custom-swal-text-error {
+    font-size: 18px;
+    color: #391b13; /* Red color for error text */
+}
+
+.swal2-popup .swal2-confirm {
+    background-color: #823f2c; /* Red button background */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.swal2-popup .swal2-confirm:hover {
+    background-color: #391b13; /* Darker shade on hover */
+}
+
