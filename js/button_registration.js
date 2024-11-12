@@ -23,18 +23,17 @@ document.getElementById("alertButton").addEventListener("click", function () {
         return;  // Exit the function if the password is too short
     }
 
-    // Check if the email contains one of the specified domains and has something before the "@"
-    const validEmailDomains = ["@gmail.com", "@tscng.org", "@scng.si"];
-    const emailPattern = /^[^@]+(@gmail\.com|@tscng\.org|@scng\.si)$/;  // Check for something before @ and valid domain
+    // Check if the email contains "@" and something before and after it
+    const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
 
     if (!emailPattern.test(email)) {
         Swal.fire({
-            title: "Invalid Email Domain or Format!",
-            text: "Please use a valid email address from the allowed domains @gmail.com, @tscng.org, @scng.si",
+            title: "Invalid Email Format!",
+            text: "Please enter a valid email address.",
             icon: "error",
             confirmButtonText: "OK"
         });
-        return;  // Exit the function if the email format or domain is not valid
+        return;  // Exit the function if the email format is not valid
     }
 
     // If any required fields are missing, show the pop-up
