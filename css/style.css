@@ -164,7 +164,7 @@ img {
 .swal2-popup {
     font-family: 'Roboto', sans-serif;
     /* Custom font */
-    background-image: url('../img/background_suprise.gif');
+    background-color: #b7e4ff;
     /* Custom background color */
     color: #000000;
     /* Text color */
