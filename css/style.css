@@ -87,6 +87,7 @@ a:hover i {
 }
 
 img {
+    padding: 60px;
     width: 794.4px;
     height: 397.2px;
     opacity: 0;
